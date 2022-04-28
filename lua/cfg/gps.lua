@@ -10,5 +10,5 @@ require("nvim-gps").setup({
     ["container-name"] = icon.gps.container, -- Containers (example: lua tables)
     ["tag-name"] = icon.gps.tag, -- Tags (example: html tags)
   },
-  separator = " > ",
+  separator = "  ",
 })

@@ -106,7 +106,12 @@ local components = {
   diagnostics = {
     "diagnostics",
     sources = { "nvim_diagnostic" },
-    symbols = { error = " ", warn = " ", info = " ", hint = " " },
+    symbols = {
+      error = icon.diagnostics.error,
+      warn = icon.diagnostics.warn,
+      info = icon.diagnostics.info,
+      hint = icon.diagnostics.hint,
+    },
     cond = conditions.over_width,
   },
   treesitter = {
@@ -157,7 +162,7 @@ local components = {
         return "  Inactive"
       end
 
-      return "  " .. table.concat(buf_client_names, ", ")
+      return "  " .. table.concat(buf_client_names, ", ")
     end,
     color = { gui = "bold" },
     cond = conditions.over_width,

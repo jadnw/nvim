@@ -17,7 +17,7 @@ icon.diff = {
 
 icon.diagnostics = {
   error = "ﮏ",
-  warn = "",
+  warn = "爫",
   info = "",
   hint = "",
   other = "",
