@@ -36,7 +36,7 @@ require("lspsaga").setup({
   },
   rename_action_keys = {
     quit = "<C-c>",
-    exec = "<CR>",  -- quit can be a table
+    exec = "<CR>", -- quit can be a table
   },
   definition_preview_icon = icon.lspsaga.definition_preview,
   border_style = "double",
