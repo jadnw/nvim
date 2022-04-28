@@ -132,7 +132,8 @@ local components = {
         end
         return msg
       end
-
+      
+      local buf_ft = vim.bo.filetype
       local buf_client_names = {}
 
       -- add client
@@ -141,6 +142,16 @@ local components = {
           table.insert(buf_client_names, client.name)
         end
       end
+
+      -- add formatter
+      local formatters = require "lsp.null-ls.formatters"
+      local supported_formatters = formatters.list_registered(buf_ft)
+      vim.list_extend(buf_client_names, supported_formatters)
+
+      -- add linter
+      local linters = require "lsp.null-ls.linters"
+      local supported_linters = linters.list_registered(buf_ft)
+      vim.list_extend(buf_client_names, supported_linters)
 
       if vim.tbl_isempty(buf_client_names) == 0 then
         return "  Inactive"

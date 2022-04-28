@@ -71,7 +71,8 @@ lsp_installer.on_server_ready(function(server)
   }
 
   local provider_loaded, provider = pcall(require, "lsp.providers." .. server.name)
-  opts = vim.tbl_extend("force", provider, opts)
-
+  if provider_loaded then
+    opts = vim.tbl_extend("force", provider, opts)
+  end
   server:setup(opts)
 end)
