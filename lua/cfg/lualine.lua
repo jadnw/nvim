@@ -16,7 +16,7 @@ local function cleanup_env(venv)
   return venv
 end
 
-local max_width = 80
+local max_width = 100
 local conditions = {
   buffer_not_empty = function()
     return vim.fn.empty(vim.fn.expand("%:t")) ~= 1
@@ -32,19 +32,19 @@ local components = {
   mode = {
     function()
       local alias = {
-        n = "  NORMAL",
-        v = "  VISUAL",
+        n = "  NORMAL",
+        v = "  VISUAL",
         V = "勺 V-LINE",
         [""] = "勺 V-BLOCK",
         s = "閭 SELECT",
         S = "  S-LINE",
         [""] = "𧻓 S-BLOCK",
-        i = "凜 INSERT",
+        i = "  INSERT",
         R = "凌 REPLACE",
         c = "גּ  COMMAND",
         r = "  PROMPT",
         ["!"] = "  EXTERNAL",
-        t = "  TERMINAL",
+        t = "  TERMINAL",
       }
       return alias[vim.fn.mode()]
     end,
@@ -65,8 +65,8 @@ local components = {
         return f_name
       end
 
-      local icon, _ = devicons.get_icon(f_name, f_ext)
-      return icon .. " " .. f_name
+      local file_icon, _ = devicons.get_icon(f_name, f_ext)
+      return file_icon .. " " .. f_name
     end,
     color = { gui = "bold" },
     padding = { left = 1, right = 1 },
@@ -91,11 +91,11 @@ local components = {
       if vim.bo.filetype == "python" then
         local venv = os.getenv("CONDA_DEFAULT_ENV")
         if venv then
-          return string.format(" |   (%s)", util.cleanup_env(venv))
+          return string.format(" |   (%s)", cleanup_env(venv))
         end
         venv = os.getenv("VIRTUAL_ENV")
         if venv then
-          return string.format(" |   (%s)", util.cleanup_env(venv))
+          return string.format(" |   (%s)", cleanup_env(venv))
         end
         return ""
       end
@@ -124,7 +124,7 @@ local components = {
   lsp = {
     function(msg)
       msg = msg or "  Inactive"
-      local buf_clients = vim.lsp.buf_get_clients()
+      local buf_clients = vim.lsp.buf_get_clients(0)
       if next(buf_clients) == nil then
         -- TODO: clean up this if statement
         if type(msg) == "boolean" or #msg == 0 then
@@ -132,7 +132,7 @@ local components = {
         end
         return msg
       end
-      
+
       local buf_ft = vim.bo.filetype
       local buf_client_names = {}
 
@@ -174,27 +174,25 @@ local components = {
     "progress",
     cond = conditions.over_width,
   },
-  spaces = {
-    function()
-      if not vim.api.nvim_buf_get_option(0, "expandtab") then
-        return "Tab size: " .. vim.api.nvim_buf_get_option(0, "tabstop") .. " "
-      end
-      local size = vim.api.nvim_buf_get_option(0, "shiftwidth")
-      if size == 0 then
-        size = vim.api.nvim_buf_get_option(0, "tabstop")
-      end
-      return "Spaces: " .. size .. " "
-    end,
-    cond = conditions.over_width,
-    color = {},
-  },
-  encoding = {
-    "o:encoding",
-    fmt = string.upper,
-    color = {},
-    cond = conditions.hide_in_width,
-  },
-  filetype = { "filetype", cond = conditions.hide_in_width, color = {} },
+  -- spaces = {
+  --   function()
+  --     if not vim.api.nvim_buf_get_option(0, "expandtab") then
+  --       return "Tab size: " .. vim.api.nvim_buf_get_option(0, "tabstop") .. " "
+  --     end
+  --     local size = vim.api.nvim_buf_get_option(0, "shiftwidth")
+  --     if size == 0 then
+  --       size = vim.api.nvim_buf_get_option(0, "tabstop")
+  --     end
+  --     return "Spaces: " .. size .. " "
+  --   end,
+  --   cond = conditions.over_width,
+  -- },
+  -- encoding = {
+  --   "o:encoding",
+  --   fmt = string.upper,
+  --   cond = conditions.hide_in_width,
+  -- },
+  filetype = { "filetype", cond = conditions.hide_in_width },
   scrollbar = {
     function()
       local current_line = vim.fn.line(".")
@@ -237,7 +235,6 @@ lualine.setup({
       components.gps,
     },
     lualine_x = {
-      components.location,
       components.branch,
       components.diff,
       components.diagnostics,
@@ -247,8 +244,7 @@ lualine.setup({
       components.lsp,
     },
     lualine_z = {
-      components.spaces,
-      components.encoding,
+      components.location,
       components.scrollbar,
     },
   },

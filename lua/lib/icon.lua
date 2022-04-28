@@ -10,9 +10,9 @@ icon.bufferline = {
 }
 
 icon.diff = {
-  add = "",
-  change = " ",
-  delete = " ",
+  add = "樂",
+  change = " ",
+  delete = " ",
 }
 
 icon.diagnostics = {
@@ -31,10 +31,18 @@ icon.notify = {
   TRACE = "",
 }
 
+icon.gps = {
+  class = "ﰪ ",
+  func = " ",
+  method = " ",
+  container = "廙",
+  tag = "笠",
+}
+
 icon.cmp_kinds = {
   Text = "[ﭨ  Text]",
   Method = "[  Method]",
-  Function = "[ Function]",
+  Function = "[  Function]",
   Constructor = "[華 Constructor]",
   Field = "[  Field]",
   Variable = "[硫 Variable]",
