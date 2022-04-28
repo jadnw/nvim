@@ -46,7 +46,7 @@ end
 local lsp_installer_loaded, lsp_installer = pcall(require, "nvim-lsp-installer")
 
 if not lsp_installer_loaded then
-  notification.error("nvim-lsp-installer is not installed", { title = "LSP" })
+  return notification.info("nvim-lsp-installer is not installed", { title = "LSP" })
 end
 
 lsp_installer.settings({
