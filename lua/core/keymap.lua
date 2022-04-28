@@ -122,6 +122,11 @@ keymap.plugin = {
     visual_line_toggle = "gc",
     visual_block_toggle = "gC",
   },
+  neoclip = {
+    confirm_select = "<cr>",
+    insert_delete_yank = "<c-d>",
+    noremal_delete_yank = "dd",
+  },
 }
 
 keymap.whichkey_n_mappings = {
@@ -179,6 +184,10 @@ keymap.whichkey_n_mappings = {
       ":BufferLineSortByExtension<CR>",
       "Sort by extension",
     },
+  },
+  c = {
+    ":lua require('telescope').extensions.neoclip.default(require('telescope.themes').get_dropdown({}))<CR>",
+    "Clipboard",
   },
   d = {
     name = "Debugger",
@@ -326,6 +335,5 @@ keymap.whichkey_n_mappings = {
     l = { ":TroubleToggle loclist<CR>", "Loclist" },
   },
 }
-
 
 return keymap

@@ -53,7 +53,7 @@ local plugins = {
   ---- LSP ------------------------------------------------
   {
     "neovim/nvim-lspconfig",
-    event = {"BufRead", "BufNewFile"},
+    event = { "BufRead", "BufNewFile" },
   },
   {
     "williamboman/nvim-lsp-installer",
@@ -182,6 +182,12 @@ local plugins = {
     "nvim-telescope/telescope.nvim",
     alias = "telescope",
     requires = "nvim-lua/plenary.nvim",
+  },
+  -- Clipboard Manager
+  {
+    "AckslD/nvim-neoclip.lua",
+    alias = "neoclip",
+    requires = "nvim-telescope/telescope.nvim",
   },
   -- Trouble Finder
   {

@@ -24,18 +24,16 @@ capabilities.textDocument.completion.completionItem.resolveSupport = {
 
 local function disgnostic_settings()
   -- diagnostic style customization
-  vim.diagnostic.config(
-      {
-          virtual_text = {
-              prefix = "●",
-              source = "always"
-          },
-          float = {
-              source = "always"
-          },
-          update_in_insert = false
-      }
-  )
+  vim.diagnostic.config({
+    virtual_text = {
+      prefix = "●",
+      source = "always",
+    },
+    float = {
+      source = "always",
+    },
+    update_in_insert = false,
+  })
 end
 
 local function on_attach(client, bufnr)

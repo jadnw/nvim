@@ -1,16 +1,16 @@
 local opts = {
   settings = {
-  Lua = {
-    diagnostics = {
-      globals = { "vim" },
-    },
-    workspace = {
-      library = {},
-      maxPreload = 100000,
-      preloadFileSize = 10000,
+    Lua = {
+      diagnostics = {
+        globals = { "vim" },
+      },
+      workspace = {
+        library = {},
+        maxPreload = 100000,
+        preloadFileSize = 10000,
+      },
     },
   },
-}
 }
 
 local lua_dev_loaded, lua_dev = pcall(require, "lua-dev")

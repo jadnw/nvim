@@ -23,7 +23,6 @@ local n_opts = {
   nowait = false, -- use `nowait` when creating keymaps
 }
 
-
 whichkey.register(keymap.whichkey_n_mappings, n_opts)
 
 whichkey.setup(opts)

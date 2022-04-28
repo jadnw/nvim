@@ -2,7 +2,7 @@
 
 local icon = require("lib.icon")
 
-require("lspsaga").setup {
+require("lspsaga").setup({
   debug = false,
   use_saga_diagnostic_sign = true,
   -- diagnostic signs
@@ -23,15 +23,22 @@ require("lspsaga").setup {
   finder_reference_icon = icon.lspsaga.finder_reference,
   max_preview_lines = 10, -- preview lines of lsp_finder and definition preview
   finder_action_keys = {
-    open = 'o', vsplit = 's',split = 'i',quit = 'q',scroll_down = '<C-f>', scroll_up = '<C-b>' -- quit can be a table
+    open = "o",
+    vsplit = "s",
+    split = "i",
+    quit = "q",
+    scroll_down = "<C-f>",
+    scroll_up = "<C-b>", -- quit can be a table
   },
   code_action_keys = {
-    quit = 'q',exec = '<CR>'
+    quit = "q",
+    exec = "<CR>",
   },
   rename_action_keys = {
-    quit = '<C-c>',exec = '<CR>'  -- quit can be a table
+    quit = "<C-c>",
+    exec = "<CR>",  -- quit can be a table
   },
   definition_preview_icon = icon.lspsaga.definition_preview,
   border_style = "double",
   rename_prompt_prefix = icon.lspsaga.rename_prompt_prefix,
-}
+})
