@@ -1,5 +1,4 @@
 -- https://github.com/folke/trouble.nvim
-
 local icon = require("lib.icon")
 
 require("trouble").setup({

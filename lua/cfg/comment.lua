@@ -1,5 +1,4 @@
 -- https://github.com/numToStr/Comment.nvim
-
 local keymap = require("core.keymap")
 local comment_string = require("ts_context_commentstring")
 

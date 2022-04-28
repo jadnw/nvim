@@ -1,5 +1,4 @@
 -- https://github.com/jose-elias-alvarez/null-ls.nvim
-
 local notification = require("lib.notification")
 
 local null_ls_loaded, null_ls = pcall(require, "null-ls")

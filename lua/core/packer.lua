@@ -111,6 +111,7 @@ local plugins = {
   {
     "rafamadriz/friendly-snippets",
   },
+
   ---- HIGHLIGHTINGS --------------------------------------
   -- Syntax highlightings
   {
@@ -127,6 +128,21 @@ local plugins = {
   {
     "p00f/nvim-ts-rainbow",
     after = "nvim-treesitter",
+  },
+  ---- DEBUG ADAPTER PROTOCOL -----------------------------
+  {
+    "mfussenegger/nvim-dap",
+    alias = "dap",
+  },
+  {
+    "theHamsta/nvim-dap-virtual-text",
+    alias = "dap-virtual-text",
+    requires = "mfussenegger/nvim-dap",
+  },
+  {
+    "rcarriga/nvim-dap-ui",
+    alias = "dap-ui",
+    requires = "mfussenegger/nvim-dap",
   },
   ---- UTILITIES ------------------------------------------
   -- Show gitsigns

@@ -1,5 +1,4 @@
 -- https://github.com/glepnir/lspsaga
-
 local icon = require("lib.icon")
 
 require("lspsaga").setup({

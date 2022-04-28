@@ -1,5 +1,4 @@
 -- https://github.com/lukas-reineke/indent-blankline.nvim
-
 -- disable indent in file type
 vim.g.indent_blankline_filetype_exclude = {
   "NvimTree",

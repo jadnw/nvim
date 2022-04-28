@@ -1,5 +1,4 @@
 -- https://github.com/nvim-lualine/lualine.nvim
-
 local icon = require("lib.icon")
 
 --- Get python venv name

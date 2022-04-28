@@ -1,5 +1,4 @@
 -- https://github.com/folke/todo-comments.nvim
-
 local icon = require("lib.icon")
 
 require("todo-comments").setup({
