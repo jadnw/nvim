@@ -1,0 +1,4 @@
+#!/bin/fish
+
+rm -rf ~/.config/nvim
+git clone git@github.com:j4d3nw/nvim.git ~/.config/nvim

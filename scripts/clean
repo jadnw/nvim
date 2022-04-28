@@ -1,0 +1,4 @@
+#!/bin/fish
+
+rm -rf ~/{.cache,.local/share}/nvim
+rm -rf ~/.config/nvim/plugin
