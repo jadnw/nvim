@@ -2,3 +2,4 @@
 
 rm -rf ~/{.cache,.local/share}/nvim
 rm -rf ~/.config/nvim
+echo "Done! nvim config has been removed."

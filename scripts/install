@@ -1,4 +1,6 @@
 #!/bin/fish
 
+echo "Install nvim config ..."
 rm -rf ~/.config/nvim
 git clone git@github.com:j4d3nw/nvim.git ~/.config/nvim
+echo "Done! Run nvim for the first time to install plugins."

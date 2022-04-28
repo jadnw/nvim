@@ -2,3 +2,4 @@
 
 rm -rf ~/{.cache,.local/share}/nvim
 rm -rf ~/.config/nvim/plugin
+echo "Done! nvim config has been cleand up. Start nvim to re-install plugins."
