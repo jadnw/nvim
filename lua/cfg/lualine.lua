@@ -226,6 +226,10 @@ lualine.setup({
       "NvimTree",
       "alpha",
       "Outline",
+      "spectre_panel",
+      "Trouble",
+      "aerial",
+      "undotree",
     },
   },
   sections = {

@@ -189,6 +189,11 @@ local plugins = {
     alias = "trouble",
     requires = "kyazdani42/nvim-web-devicons",
   },
+  -- Undotree
+  {
+    "mbbill/undotree",
+    alias = "undotree",
+  },
   -- Which Key
   {
     "folke/which-key.nvim",
