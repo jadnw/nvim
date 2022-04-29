@@ -44,6 +44,6 @@ require("nvim-tree").setup({
   },
   filters = {
     dotfiles = true,
-    custom = { "__pycache__", ".git", "node_modules" },
+    custom = { "__pycache__$", ".git$", "node_modules$" },
   },
 })
