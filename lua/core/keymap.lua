@@ -58,7 +58,7 @@ keymap.global = {
     { { "c" }, "<C-k>", 'pumvisible() ? "\\<C-p>" : "\\<C-k>"', { expr = true } },
   },
   tree = {
-    { { "n", "i", "v" }, "<C-n>", ":lua require('nvim-tree').toggle()<CR>" },
+    { { "n", "v" }, "<C-n>", ":lua require('nvim-tree').toggle()<CR>" },
   },
   bufferline = {
     { { "n" }, "<S-j>", ":BufferLineCycleNext<CR>" },
