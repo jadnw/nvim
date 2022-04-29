@@ -106,10 +106,10 @@ local components = {
     "diagnostics",
     sources = { "nvim_diagnostic" },
     symbols = {
-      error = icon.diagnostics.error,
-      warn = icon.diagnostics.warn,
-      info = icon.diagnostics.info,
-      hint = icon.diagnostics.hint,
+      error = icon.diagnostics.error .. " ",
+      warn = icon.diagnostics.warn .. " ",
+      info = icon.diagnostics.info .. " ",
+      hint = icon.diagnostics.hint .. " ",
     },
     cond = conditions.over_width,
   },
@@ -118,7 +118,7 @@ local components = {
       local b = vim.api.nvim_get_current_buf()
 
       if next(vim.treesitter.highlighter.active[b]) then
-        return " "
+        return "   |"
       end
 
       return ""
@@ -161,7 +161,7 @@ local components = {
         return "  Inactive"
       end
 
-      return "  " .. table.concat(buf_client_names, ", ")
+      return "﫸  " .. table.concat(buf_client_names, ", ")
     end,
     color = { gui = "bold" },
     cond = conditions.over_width,

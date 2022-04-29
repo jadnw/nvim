@@ -25,7 +25,7 @@ icon.diagnostics = {
 
 icon.notify = {
   ERROR = "ﮏ",
-  WARN = "",
+  WARN = "爫",
   INFO = "",
   DEBUG = "",
   TRACE = "",
@@ -33,19 +33,19 @@ icon.notify = {
 
 icon.gps = {
   class = "ﰪ ",
-  func = " ",
+  func = " ",
   method = " ",
-  container = "廙",
+  container = "ﰩ ",
   tag = "笠",
 }
 
 icon.cmp_kinds = {
   Text = "[ﭨ  Text]",
   Method = "[  Method]",
-  Function = "[  Function]",
-  Constructor = "[華 Constructor]",
+  Function = "[  Function]",
+  Constructor = "[襁 Constructor]",
   Field = "[  Field]",
-  Variable = "[硫 Variable]",
+  Variable = "[﯑  Variable]",
   Class = "[ﰪ  Class]",
   Interface = "[ﯱ  Interface]",
   Module = "[  Module]",
