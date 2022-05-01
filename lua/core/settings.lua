@@ -1,5 +1,9 @@
 local path = require("lib.path")
 
+local globals = {
+  colorcolumn_index = 1,
+}
+
 local options = {
   backup = false, -- creates a backup file
   clipboard = "unnamedplus", -- allows neovim to access the system clipboard
@@ -48,7 +52,11 @@ local options = {
   sidescrolloff = 8, -- minimal number of screen lines to keep left and right of the cursor.
 }
 
-local function load_default(opts)
+local function load_default(glbs, opts)
+  for k, v in pairs(glbs) do
+    vim.g[k] = v
+  end
+
   vim.opt.shortmess:append("c") -- don't show redundant messages from ins-completion-menu
   vim.opt.shortmess:append("I") -- don't show the default intro message
   vim.opt.whichwrap:append("<,>,[,],h,l")
@@ -69,5 +77,5 @@ end
 if #vim.api.nvim_list_uis() == 0 then
   load_headless()
 else
-  load_default(options)
+  load_default(globals, options)
 end

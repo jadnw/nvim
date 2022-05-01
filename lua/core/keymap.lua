@@ -56,6 +56,9 @@ keymap.global = {
     -- Ctrl-j/k to select tab completion
     { { "c" }, "<C-j>", 'pumvisible() ? "\\<C-n>" : "\\<C-j>"', { expr = true } },
     { { "c" }, "<C-k>", 'pumvisible() ? "\\<C-p>" : "\\<C-k>"', { expr = true } },
+
+    -- FUNCTIONS
+    { { "n", "i", "v" }, "<A-c>", ":lua require('lib.functions').cycle_colorcolumn()<CR>" },
   },
   tree = {
     { { "n", "v" }, "<C-n>", ":lua require('nvim-tree').toggle()<CR>" },
