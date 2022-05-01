@@ -9,12 +9,16 @@ if not null_ls_loaded then
 end
 
 local sources = {
+  -- CODE ACTIONS
   null_ls.builtins.code_actions.gitsigns,
+  -- DIAGNOSTICS
   null_ls.builtins.diagnostics.eslint,
+  null_ls.builtins.diagnostics.golangci_lint,
   null_ls.builtins.diagnostics.luacheck,
   -- null_ls.builtins.diagnostics.markdownlint,
   null_ls.builtins.diagnostics.pylint,
   -- null_ls.builtins.diagnostics.tsc,
+  -- FORMATTING
   null_ls.builtins.formatting.black,
   null_ls.builtins.formatting.clang_format,
   -- null_ls.builtins.formatting.dart_format,

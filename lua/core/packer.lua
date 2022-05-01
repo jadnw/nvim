@@ -144,6 +144,10 @@ local plugins = {
     alias = "dap-ui",
     requires = "mfussenegger/nvim-dap",
   },
+  {
+    "leoluz/nvim-dap-go",
+    alias = "dap-go",
+  },
   ---- UTILITIES ------------------------------------------
   -- Show gitsigns
   {
