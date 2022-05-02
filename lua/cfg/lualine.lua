@@ -161,7 +161,7 @@ local components = {
         return "  Inactive"
       end
 
-      return "﫸  " .. table.concat(buf_client_names, ", ")
+      return "﫸 " .. table.concat(buf_client_names, ", ")
     end,
     color = { gui = "bold" },
     cond = conditions.over_width,
@@ -178,19 +178,19 @@ local components = {
     "progress",
     cond = conditions.over_width,
   },
-  -- spaces = {
-  --   function()
-  --     if not vim.api.nvim_buf_get_option(0, "expandtab") then
-  --       return "Tab size: " .. vim.api.nvim_buf_get_option(0, "tabstop") .. " "
-  --     end
-  --     local size = vim.api.nvim_buf_get_option(0, "shiftwidth")
-  --     if size == 0 then
-  --       size = vim.api.nvim_buf_get_option(0, "tabstop")
-  --     end
-  --     return "Spaces: " .. size .. " "
-  --   end,
-  --   cond = conditions.over_width,
-  -- },
+  spaces = {
+    function()
+      if not vim.api.nvim_buf_get_option(0, "expandtab") then
+        return "Tab size: " .. vim.api.nvim_buf_get_option(0, "tabstop") .. " "
+      end
+      local size = vim.api.nvim_buf_get_option(0, "shiftwidth")
+      if size == 0 then
+        size = vim.api.nvim_buf_get_option(0, "tabstop")
+      end
+      return "Spaces: " .. size .. " "
+    end,
+    cond = conditions.over_width,
+  },
   -- encoding = {
   --   "o:encoding",
   --   fmt = string.upper,
@@ -252,6 +252,7 @@ lualine.setup({
       components.lsp,
     },
     lualine_z = {
+      components.spaces,
       components.location,
       components.scrollbar,
     },
