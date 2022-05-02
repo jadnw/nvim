@@ -11,7 +11,6 @@ local keymap = require("core.keymap")
 local icon = require("lib.icon")
 
 local cmp = require("cmp")
-local luasnip = require("luasnip")
 
 local under_compare = function(entry1, entry2)
   local _, entry1_under = entry1.completion_item.label:find("^_+")
@@ -78,7 +77,7 @@ cmp.setup({
       else
         cmp.complete()
       end
-    end, { "i", "s", "c" }),
+    end, { "i", "s" }),
   },
   sorting = {
     priority_weight = 2,
