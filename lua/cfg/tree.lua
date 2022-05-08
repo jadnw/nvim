@@ -39,7 +39,7 @@ vim.g.nvim_tree_icons = {
 
 require("nvim-tree").setup({
   view = {
-    width = 36,
+    width = 30,
     hide_root_folder = false,
   },
   filters = {
