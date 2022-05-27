@@ -118,7 +118,7 @@ local components = {
       local b = vim.api.nvim_get_current_buf()
 
       if next(vim.treesitter.highlighter.active[b]) then
-        return "   |"
+        return "  |"
       end
 
       return ""
@@ -161,7 +161,7 @@ local components = {
         return "  Inactive"
       end
 
-      return "﫸 " .. table.concat(buf_client_names, ", ")
+      return "ﮀ  " .. table.concat(buf_client_names, ", ")
     end,
     color = { gui = "bold" },
     cond = conditions.over_width,
