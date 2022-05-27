@@ -157,8 +157,8 @@ local components = {
       local supported_linters = linters.list_registered(buf_ft)
       vim.list_extend(buf_client_names, supported_linters)
 
-      if vim.tbl_isempty(buf_client_names) == 0 then
-        return "  Inactive"
+      if vim.tbl_isempty(buf_client_names) then
+        return "ﭿ  No LSP attached"
       end
 
       return "ﮀ  " .. table.concat(buf_client_names, ", ")
