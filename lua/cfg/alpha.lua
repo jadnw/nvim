@@ -30,6 +30,6 @@ dashboard.section.buttons.val = {
   dashboard.button("Space p s", "  Update Plugins", ":PackerSync<CR>"),
 }
 
-dashboard.section.footer.val = "Enjoy your coding time! j4d3nw on 🔥"
+dashboard.section.footer.val = "Enjoy your coding time! Jay on 🔥"
 
 alpha.setup(dashboard.config)
