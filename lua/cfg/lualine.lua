@@ -15,7 +15,7 @@ local function cleanup_env(venv)
   return venv
 end
 
-local max_width = 100
+local max_width = 120
 local conditions = {
   buffer_not_empty = function()
     return vim.fn.empty(vim.fn.expand("%:t")) ~= 1
