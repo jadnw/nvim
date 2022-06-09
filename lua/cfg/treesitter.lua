@@ -20,6 +20,7 @@ tsconfigs.setup({
     "markdown",
     "python",
     "scss",
+    "svelte",
     "toml",
     "tsx",
     "typescript",
