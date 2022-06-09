@@ -12,14 +12,14 @@ local icon = require("lib.icon")
 
 local cmp = require("cmp")
 
-local under_compare = function(entry1, entry2)
-  local _, entry1_under = entry1.completion_item.label:find("^_+")
-  local _, entry2_under = entry2.completion_item.label:find("^_+")
-  entry1_under = entry1_under or 0
-  entry2_under = entry2_under or 0
-  -- _ completions at the beginning come later
-  return entry1_under < entry2_under
-end
+-- local under_compare = function(entry1, entry2)
+--   local _, entry1_under = entry1.completion_item.label:find("^_+")
+--   local _, entry2_under = entry2.completion_item.label:find("^_+")
+--   entry1_under = entry1_under or 0
+--   entry2_under = entry2_under or 0
+--   -- _ completions at the beginning come later
+--   return entry1_under < entry2_under
+-- end
 
 cmp.setup({
   snippet = {
@@ -82,7 +82,7 @@ cmp.setup({
   sorting = {
     priority_weight = 2,
     comparators = {
-      under_compare,
+      -- under_compare,
       cmp.config.compare.offset,
       cmp.config.compare.exact,
       cmp.config.compare.score,
