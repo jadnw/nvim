@@ -13,10 +13,10 @@ local plugins = {
     alias = "notify",
   },
   ---- THEMES ---------------------------------------------
-  -- Gemstones
+  -- Nightwing Colorscheme
   {
-    "j4d3nw/gemstones.nvim",
-    alias = "gemstones",
+    "jadnw/nightwing.nvim",
+    alias = "nightwing",
   },
   ---- USER INTERFACES ------------------------------------
   -- Dashboard
