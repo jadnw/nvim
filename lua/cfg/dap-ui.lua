@@ -3,11 +3,29 @@ local dap = require("dap")
 local dapui = require("dapui")
 
 local options = {
-    sidebar = {
-        -- dapui windows on the right
-        position = "right"
-    }
+  layouts = {
+    {
+      elements = {
+      -- Elements can be strings or table with id and size keys.
+        { id = "scopes", size = 0.25 },
+        "breakpoints",
+        "stacks",
+        "watches",
+      },
+      size = 40,
+      position = "right",
+    },
+    {
+      elements = {
+        "repl",
+        "console",
+      },
+      size = 10,
+      position = "bottom",
+    },
+  },
 }
+
 
 -- automatically start dapui when debugging starts
 dap.listeners.after.event_initialized["dapui_config"] = function()
