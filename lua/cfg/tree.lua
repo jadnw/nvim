@@ -1,8 +1,8 @@
 -- https://github.com/kyazdani42/nvim-tree.lua
 require("nvim-tree").setup({
   view = {
-    width = 36,
-    hide_root_folder = false,
+    width = 32,
+    hide_root_folder = true,
     preserve_window_proportions = true,
   },
   renderer = {
