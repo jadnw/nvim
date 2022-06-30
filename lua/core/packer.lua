@@ -13,10 +13,10 @@ local plugins = {
     alias = "notify",
   },
   ---- THEMES ---------------------------------------------
-  -- Batwing Colorscheme
+  -- Manhattan Colorscheme
   {
-    "jadnw/batwing.nvim",
-    alias = "batwing",
+    "jadnw/manhattan.nvim",
+    alias = "manhattan",
   },
   ---- USER INTERFACES ------------------------------------
   -- Dashboard
