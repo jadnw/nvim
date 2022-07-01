@@ -223,8 +223,8 @@ lualine.setup({
       right = "",
     },
     section_separators = {
-      left = "🭬",
-      right = "🭮",
+      left = "",
+      right = "",
     },
     disabled_filetypes = {
       "NvimTree",
