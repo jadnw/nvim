@@ -43,13 +43,21 @@ local function on_attach(client, bufnr)
   disgnostic_settings()
 end
 
+local lspconfig_loaded, lspconfig = pcall(require, "lspconfig")
 local lsp_installer_loaded, lsp_installer = pcall(require, "nvim-lsp-installer")
+
+if not lspconfig_loaded then
+  return notification.info("nvim-lspconfig is not installed", { title = "LSP" })
+end
 
 if not lsp_installer_loaded then
   return notification.info("nvim-lsp-installer is not installed", { title = "LSP" })
 end
 
-lsp_installer.settings({
+--- SETUP LSP
+-- Run nvim-lsp-installer setup before any lsp server configs
+lsp_installer.setup {
+  automatic_installation = true,
   ui = {
     icons = {
       server_installed = "✓",
@@ -57,20 +65,27 @@ lsp_installer.settings({
       server_uninstalled = "✗",
     },
   },
-})
+}
 
-lsp_installer.on_server_ready(function(server)
-  local opts = {
-    capabilities = capabilities,
-    on_attach = on_attach,
-    flags = {
-      debounce_text_changes = 150,
-    },
-  }
+-- General options for all server configs
+local opts = {
+  capabilities = capabilities,
+  on_attach = on_attach,
+  flags = {
+    debounce_text_changes = 150,
+  },
+}
 
-  local provider_loaded, provider = pcall(require, "lsp.providers." .. server.name)
-  if provider_loaded then
-    opts = vim.tbl_extend("force", provider, opts)
-  end
-  server:setup(opts)
-end)
+local sumneko_lua = vim.tbl_extend("force", require("lsp.providers.sumneko_lua") or {}, opts)
+
+lspconfig.clangd.setup(opts)
+lspconfig.cssls.setup(opts)
+lspconfig.cssmodules_ls.setup(opts)
+lspconfig.dockerls.setup(opts)
+lspconfig.graphql.setup(opts)
+lspconfig.html.setup(opts)
+lspconfig.pyright.setup(opts)
+lspconfig.sumneko_lua.setup(sumneko_lua)
+lspconfig.svelte.setup(opts)
+lspconfig.tailwindcss.setup(opts)
+lspconfig.tsserver.setup(opts)

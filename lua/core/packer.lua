@@ -53,7 +53,7 @@ local plugins = {
   ---- LSP ------------------------------------------------
   {
     "neovim/nvim-lspconfig",
-    event = { "BufRead", "BufNewFile" },
+    -- event = { "BufRead", "BufNewFile" },
   },
   {
     "williamboman/nvim-lsp-installer",
