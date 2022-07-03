@@ -65,7 +65,7 @@ local components = {
       end
 
       local file_icon, _ = devicons.get_icon(f_name, f_ext)
-      return file_icon .. " " .. f_name
+      return file_icon .. "  " .. f_name
     end,
     color = { gui = "bold" },
     padding = { left = 1, right = 1 },
