@@ -2,7 +2,7 @@
 require("nvim-tree").setup({
   view = {
     width = 32,
-    hide_root_folder = true,
+    hide_root_folder = false,
     preserve_window_proportions = true,
   },
   renderer = {
