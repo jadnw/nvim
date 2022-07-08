@@ -56,7 +56,7 @@ end
 
 --- SETUP LSP
 -- Run nvim-lsp-installer setup before any lsp server configs
-lsp_installer.setup {
+lsp_installer.setup({
   automatic_installation = true,
   ui = {
     icons = {
@@ -65,7 +65,7 @@ lsp_installer.setup {
       server_uninstalled = "✗",
     },
   },
-}
+})
 
 -- General options for all server configs
 local opts = {

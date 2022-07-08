@@ -10,7 +10,7 @@ end
 
 local sources = {
   -- CODE ACTIONS
-  null_ls.builtins.code_actions.gitsigns,
+  -- null_ls.builtins.code_actions.gitsigns,
   -- DIAGNOSTICS
   null_ls.builtins.diagnostics.eslint.with({
     filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact", "vue", "svelte" },
@@ -29,12 +29,30 @@ local sources = {
   null_ls.builtins.formatting.gofmt,
   -- null_ls.builtins.formatting.markdownlint,
   null_ls.builtins.formatting.prettier.with({
-    filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact", "vue", "css", "scss", "less", "html", "json", "jsonc", "yaml", "markdown", "graphql", "handlebars", "svelte" },
+    filetypes = {
+      "javascript",
+      "javascriptreact",
+      "typescript",
+      "typescriptreact",
+      "vue",
+      "css",
+      "scss",
+      "less",
+      "html",
+      "json",
+      "jsonc",
+      "yaml",
+      "markdown",
+      "graphql",
+      "handlebars",
+      "svelte",
+    },
     command = "./node_modules/.bin/prettier",
   }),
   null_ls.builtins.formatting.stylua,
 }
 
 null_ls.setup({
+  debug = true,
   sources = sources,
 })

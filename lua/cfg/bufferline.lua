@@ -4,7 +4,7 @@ local icon = require("lib.icon")
 require("bufferline").setup({
   options = {
     -- indicator_icon = icon.bufferline.indicator,
-    indicator_icon = '', -- disable indicator
+    indicator_icon = "", -- disable indicator
     buffer_close_icon = icon.bufferline.buffer_close,
     modified_icon = icon.bufferline.modified,
     close_icon = icon.bufferline.close,
