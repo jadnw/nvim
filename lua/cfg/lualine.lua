@@ -168,7 +168,7 @@ local components = {
   },
   gps = {
     gps.get_location,
-    cond = gps_loaded and gps.is_available,
+    cond = gps_loaded and gps.is_available and conditions.over_width,
   },
   location = {
     "location",
