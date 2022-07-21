@@ -23,7 +23,7 @@ local sources = {
   -- null_ls.builtins.diagnostics.tsc,
   -- FORMATTING
   null_ls.builtins.formatting.black,
-  null_ls.builtins.formatting.clang_format,
+  -- null_ls.builtins.formatting.clang_format,
   -- null_ls.builtins.formatting.dart_format,
   null_ls.builtins.formatting.fish_indent,
   null_ls.builtins.formatting.gofmt,
