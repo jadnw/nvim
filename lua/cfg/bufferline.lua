@@ -1,6 +1,12 @@
 -- https://github.com/akinsho/bufferline.nvim
 local icon = require("lib.icon")
 
+local function get_cwd()
+  local cwd = vim.fn.getcwd()
+  cwd = string.gsub(cwd, vim.fn.getenv("HOME"), "~")
+  return " פּ  " .. cwd
+end
+
 require("bufferline").setup({
   options = {
     -- indicator_icon = icon.bufferline.indicator,
@@ -13,7 +19,7 @@ require("bufferline").setup({
     max_name_length = 20,
     tab_size = 24,
     diagnostics = "nvim_lsp",
-    offsets = { { filetype = "NvimTree", text = "The Galathilion", text_align = "center" } },
+    offsets = { { filetype = "NvimTree", text = get_cwd, text_align = "left" } },
     show_buffer_close_icons = false,
     show_close_icon = false,
     show_tab_indicators = false,
