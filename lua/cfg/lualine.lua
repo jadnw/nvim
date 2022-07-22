@@ -69,6 +69,7 @@ local components = {
     end,
     color = { gui = "bold" },
     padding = { left = 1, right = 1 },
+    cond = conditions.over_width,
   },
   diff = {
     "diff",
@@ -252,7 +253,7 @@ lualine.setup({
       components.lsp,
     },
     lualine_z = {
-      components.spaces,
+      -- components.spaces,
       components.location,
       components.scrollbar,
     },
